@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const submenuLinks = document.querySelectorAll('.gallery-submenu-link');
     if (!submenuLinks.length) return;
 
-    const STAGGER_SECONDS = 0.1; 
-    const ITEM_DURATION_SECONDS = 0.2; 
+    const STAGGER_SECONDS = 0.1;
+    const ITEM_DURATION_SECONDS = 0.2;
 
     function getGallery(key) {
         return document.querySelector('.gallery-container[data-gallery="' + key + '"]');
@@ -71,7 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
             link.classList.add('active');
 
             if (window.matchMedia('(max-width: 991.98px)').matches) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                link.blur();
+                requestAnimationFrame(function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
 
             currentGallery.classList.add('gallery-fade-out');
