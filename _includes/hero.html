@@ -1,0 +1,69 @@
+<div class="container mt-4 cv-container d-flex justify-content-center">
+    <div class="image-container">
+        <img id="heroImage" src="/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg" 
+             alt="Do You Remember What It Feels Like To Grow?" 
+             class="img-fluid lightbox-image" loading="lazy">
+    </div>
+</div>
+<div class="container cv-container mt-2">
+    <small id="imageTitle" class="mb-0">Do Yo Remember What It Feels Like To Grow?</small>
+    <br>
+    <a href="#" id="prevBtn" class="fs-3 text-muted me-1"><i class="bi bi-arrow-left-circle"></i></a>
+    <a href="#" id="nextBtn" class="fs-3 text-muted"><i class="bi bi-arrow-right-circle"></i></a>
+</div>
+<script>
+    // Image array with corresponding titles
+    const images = [
+        {
+            src: "/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg",
+            title: "Do You Remember What It Feels Like To Grow?"
+        },
+        {
+            src: "/assets/images/gallery/Born To Live And Let Go Gallery.jpg",
+            title: "Born To Live and Let Go"
+        },
+        {
+            src: "/assets/images/gallery/Fig Wasp Gallery.jpg",
+            title: "Fig Wasp"
+        }
+    ];
+    
+    let currentIndex = 0;
+    
+    // Get DOM elements
+    const heroImage = document.getElementById('heroImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const imageTitle = document.getElementById('imageTitle');
+    
+    // Update image and title function
+    function updateImage() {
+        heroImage.src = images[currentIndex].src;
+        imageTitle.textContent = images[currentIndex].title;
+    }
+    
+    // Previous button handler
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+    
+    // Next button handler
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+    
+    // Optional: Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        } else if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    });
+</script>

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white w-100 sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-normal p-4" href="/">
+      Matthew Casanovas
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/paintings">Paintings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.instagram.com/matthewcasanovas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Strip a trailing slash so "/cv" and "/cv/" are treated as the same page.
+    // GitHub Pages serves folder URLs with a trailing slash (cv/index.html -> /cv/),
+    // but our nav links are written without one.
+    function normalizePath(path) {
+        return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+    }
+    const currentPage = normalizePath(window.location.pathname);
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && normalizePath(href) === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
