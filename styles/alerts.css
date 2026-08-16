@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('../assets/fonts/VCR_OSD_MONO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url('../assets/images/contact/vhs.gif');
+    background-size: cover;
+    background-position: center;
+    font-family: 'VCR OSD Mono', monospace;
+    background-color: #000;
+    color: #39FF14;
+    overflow-x: hidden;
+    text-shadow: 0 0 4px rgba(57, 255, 20, 0.4);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.retro-container {
+    position: relative;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.retro-container,
+.retro-container *,
+.calendar,
+.calendar *,
+.play,
+.play * {
+    font-family: 'VCR OSD Mono', monospace;
+    color: #39FF14;
+}
+
+#navbar,
+#navbar * {
+    text-shadow: none;
+}
+
+.calendar {
+    position: fixed;
+    left: 40px;
+    bottom: 30px;
+    z-index: 3;
+}
+
+.calendar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+ 
+.play {
+    position: fixed;
+    left: 40px;
+    top: 40px;
+    z-index: 3;
+    font-size: 2rem;
+}
+
+.play a {
+    text-decoration: none;
+    color: #39FF14;
+}
+
+.play a:hover,
+.play a:focus {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.icon-nudge {
+    display: inline-block;
+    position: relative;
+    top: -0.15em;
+}
+
+.retro-title {
+    font-weight: normal;
+    font-size: 3.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.retro-subtitle {
+    font-size: 1.4rem;
+    color: #7fff9e;
+    margin-bottom: 2rem;
+}
+
+.secret-image {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 2rem;
+    filter: grayscale(30%);
+}
+
+.codeword-form {
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+}
+
+.codeword-form label {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.codeword-form .form-control {
+    background: transparent;
+    border: 1px solid #39FF14;
+    border-radius: 0;
+    color: #39FF14;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.codeword-form .form-control:focus {
+    background: transparent;
+    color: #39FF14;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.codeword-form .btn-retro {
+    border: 1px solid #39FF14;
+    background: transparent;
+    color: #39FF14;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 6px 20px;
+    width: 100%;
+}
+
+.codeword-form .btn-retro:hover {
+    background-color: #39FF14;
+    color: #000;
+}
+
+#codeword-status {
+    min-height: 1.5rem;
+}
+
+#codeword-status.error {
+    color: #ff6b6b;
+}
+
+#unlocked-message {
+    display: none;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+}
+
+.blink-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@media (max-width: 576px) {
+    .retro-title { font-size: 2.2rem; }
+    .calendar, .play { display: none; }
+}

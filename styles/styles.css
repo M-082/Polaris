@@ -1,0 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+    padding-top: 70px;
+}
+
+.navbar-brand,
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    box-sizing: border-box;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link.active {
+    color: #27345f !important;
+    font-weight: 500;
+}
+
+html, body {
+  overflow-y: scroll;     
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.cv-container {
+    margin-top: 20px;
+}
+
+.cv-bio-col {
+    width: 100%;
+}
+
+.cv-list-col {
+    width: 100%;
+}

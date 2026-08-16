@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('../assets/fonts/VCR_OSD_MONO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url('../assets/images/contact/vhs.gif');
+    background-size: cover;
+    background-position: center;
+    font-family: 'VCR OSD Mono', monospace;
+    background-color: #000;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    text-shadow: 0 0 4px rgb(252, 252, 252);
+}
+
+/* CRT scanline overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.retro-container {
+    position: relative;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.retro-container,
+.retro-container *,
+.calendar,
+.calendar *,
+.play,
+.play * {
+    font-family: 'VCR OSD Mono', monospace;
+    color: #FFFFFF;
+}
+
+.retro-title {
+    font-weight: normal;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.retro-subtitle {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    margin-bottom: 2.5rem;
+}
+
+.calendar {
+    position: fixed;
+    left: 40px;
+    bottom: 30px;
+    z-index: 3;
+}
+
+.calendar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.play {
+    position: fixed;
+    left: 40px;
+    top: 130px;
+    z-index: 3;
+    font-size: 2rem;
+}
+
+/* Deliberately styled to be indistinguishable from plain text —
+   no underline, no color shift, no pointer cursor on hover. */
+.play a {
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+/* Nudges the pause glyph up slightly to align better with the text baseline */
+.icon-nudge {
+    display: inline-block;
+    position: relative;
+}
+
+.retro-form {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 3;
+}
+
+.retro-form label {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.retro-form .form-control {
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 0;
+    color: #FFFFFF;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 1.2rem;
+}
+
+.retro-form .form-control:focus {
+    background: transparent;
+    color: #FFFFFF;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.retro-form .btn-retro {
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 6px 20px;
+}
+
+.retro-form .btn-retro:hover {
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.retro-links a {
+    color: #FFFFFF;
+}
+
+@media (max-width: 576px) {
+    .retro-title { font-size: 2.5rem; }
+    .calendar, .play { display: none; }
+}

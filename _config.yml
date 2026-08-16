@@ -1,0 +1,9 @@
+title: Matthew Casanovas
+
+# Files/folders Jekyll shouldn't try to process or copy into the built site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

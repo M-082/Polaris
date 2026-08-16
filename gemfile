@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+
+# Ruby stopped bundling these by default starting around Ruby 3.4/4.0,
+# but Jekyll and its dependencies still expect them to be available.
+gem "webrick"
+gem "csv"
+gem "base64"
+gem "logger"

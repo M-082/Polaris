@@ -1,0 +1,115 @@
+.archive-year-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: none;
+}
+.archive-year-toggle:hover,
+.archive-year-toggle:focus {
+    box-shadow: none;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 10px;
+    transition: opacity 0.2s ease;
+}
+.gallery-container.gallery-fade-out {
+    opacity: 0;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    aspect-ratio: 1/1;
+}
+.gallery-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.gallery-item.item-fall-enter {
+    opacity: 0;
+    transform: translateY(40px);
+}
+.gallery-item.item-fall-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.gallery-stage {
+    position: relative;
+}
+
+.gallery-submenu-link {
+    display: inline-block;
+    color: #2f2f2f;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.gallery-submenu-link.active {
+    color: #27345f;
+    font-weight: 500;
+}
+.gallery-submenu-link:hover {
+    transform: translateX(-10px);
+}
+
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 5px;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
