@@ -1,6 +1,6 @@
 <div class="container mt-4 cv-container d-flex justify-content-center">
     <div class="image-container">
-        <img id="heroImage" src="/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg" 
+        <img id="heroImage" src="{{ '/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg' | relative_url }}" 
              alt="Do You Remember What It Feels Like To Grow?" 
              class="img-fluid lightbox-image" loading="lazy">
     </div>
@@ -15,15 +15,15 @@
     // Image array with corresponding titles
     const images = [
         {
-            src: "/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg",
+            src: "{{ '/assets/images/gallery/Do You Remember What It Feels Like To Grow Gallery.jpg' | relative_url }}",
             title: "Do You Remember What It Feels Like To Grow?"
         },
         {
-            src: "/assets/images/gallery/Born To Live And Let Go Gallery.jpg",
+            src: "{{ '/assets/images/gallery/Born To Live And Let Go Gallery.jpg' | relative_url }}",
             title: "Born To Live and Let Go"
         },
         {
-            src: "/assets/images/gallery/Fig Wasp Gallery.jpg",
+            src: "{{ '/assets/images/gallery/Fig Wasp Gallery.jpg' | relative_url }}",
             title: "Fig Wasp"
         }
     ];

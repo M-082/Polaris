@@ -1,3 +1,5 @@
+---
+---
 // Retro clock widget
 function updateClock() {
     const now = new Date();
@@ -16,7 +18,7 @@ updateClock();
 
 // Hidden trigger — looks like plain text, quietly opens the secret page
 function unlockSecret() {
-    window.location.href = "/secret";
+    window.location.href = "{{ '/secret' | relative_url }}";
 }
 
 // Contact form submission (Web3Forms)

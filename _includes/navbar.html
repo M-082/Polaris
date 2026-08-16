@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white w-100 sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand fw-normal p-4" href="/">
+    <a class="navbar-brand fw-normal p-4" href="{{ '/' | relative_url }}">
       Matthew Casanovas
     </a>
     <button
@@ -17,13 +17,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/cv">CV</a>
+          <a class="nav-link" href="{{ '/cv' | relative_url }}">CV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/paintings">Paintings</a>
+          <a class="nav-link" href="{{ '/paintings' | relative_url }}">Paintings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="{{ '/contact' | relative_url }}">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://www.instagram.com/matthewcasanovas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
