@@ -143,7 +143,7 @@
 }
 
 .lightbox3-close:focus-visible {
-  outline: 2px solid hsla(0, 0%, 100%, .8);
+  outline: 2px solid hsla(0, 0%, 34%, 0.829);
   outline-offset: 2px;
 }
 
@@ -162,7 +162,7 @@
   align-items: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: hsla(0, 0%, 100%, .1);
+  background: hsla(0, 0%, 34%, 0.829);
   border: none;
   border-radius: 50%;
   box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .08);
@@ -190,7 +190,7 @@
 }
 
 .lightbox3-arrow:focus-visible {
-  outline: 2px solid hsla(0, 0%, 100%, .8);
+  outline: 2px solid hsla(0, 0%, 34%, 0.829);
   outline-offset: 2px;
 }
 
